@@ -1,15 +1,8 @@
 from django import forms
-from pybo.models import Question, Answer, Comment, FileUpload
+from pybo.models import Question, Answer, Comment
 
 # from django.forms import ModelForm
 # from .models import FileUpload
-
-
-class FileUploadForm(forms.ModelForm):
-    class Meta:
-        model = FileUpload
-        fields = ['title', 'imgfile', 'content']
-
 
 class QuestionForm(forms.ModelForm):
     class Meta:

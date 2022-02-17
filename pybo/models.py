@@ -2,14 +2,6 @@ from django.db import models
 from django.contrib.auth.models import User
 
 
-class FileUpload(models.Model):
-    title = models.TextField(max_length=40, null=True)
-    imgfile = models.ImageField(null=True, upload_to="", blank=True)
-    content = models.TextField()
-
-    def __str__(self):
-        return self.title
-
 # Create your models here.
 class Question(models.Model):
     author = models.ForeignKey(User, on_delete=models.CASCADE, related_name='author_question')
