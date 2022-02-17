@@ -19,8 +19,6 @@ def question_create(request):
         form = QuestionForm(request.POST)
         if form.is_valid():
             question = form.save(commit=False)
-            question.imgfile = request.FILES.get('imgfile')
-            # !!! 반드시 files 은 이처럼 따로 request 의 files을 따로 모델 속성에 저장해주어야 한다.
             question.author = request.user  # author 속성에 로그인 계정 저장
             question.create_date = timezone.now()
             question.save()
